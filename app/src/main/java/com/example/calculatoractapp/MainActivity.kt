@@ -8,6 +8,8 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
     lateinit var btnCalculator:Button
     lateinit var btnClassCalculator:Button
+    lateinit var btnEkda:Button
+    lateinit var btnOddEven:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         btnCalculator=findViewById(R.id.btnCalculator)
         btnClassCalculator=findViewById(R.id.btnClassCalculator)
+        btnEkda=findViewById(R.id.btnEkda)
+        btnOddEven=findViewById(R.id.btnOddEven)
 
     }
     fun bindClick(){
@@ -34,6 +38,18 @@ class MainActivity : AppCompatActivity() {
 
 
             startActivity(Intent(this,ClassCalculatorAct::class.java))
+
+        }
+        btnEkda.setOnClickListener {
+
+
+            startActivity(Intent(this,EkdaAct::class.java))
+
+        }
+        btnOddEven.setOnClickListener {
+
+
+            startActivity(Intent(this,OddEvenAct::class.java))
 
         }
 
