@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnClassCalculator:Button
     lateinit var btnEkda:Button
     lateinit var btnOddEven:Button
+    lateinit var btnBnak:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         btnClassCalculator=findViewById(R.id.btnClassCalculator)
         btnEkda=findViewById(R.id.btnEkda)
         btnOddEven=findViewById(R.id.btnOddEven)
+        btnBnak=findViewById(R.id.btnBnak)
 
     }
     fun bindClick(){
@@ -50,6 +52,12 @@ class MainActivity : AppCompatActivity() {
 
 
             startActivity(Intent(this,OddEvenAct::class.java))
+
+        }
+        btnBnak.setOnClickListener {
+
+
+            startActivity(Intent(this,BankAct::class.java))
 
         }
 

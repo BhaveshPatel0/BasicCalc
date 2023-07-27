@@ -53,14 +53,11 @@ class Ekda {
 
                 listofNumbers.add(number)
             }
-            else {
-                listofNumbers.add(number)
-            }
 
         }
         return listofNumbers
     }
-    fun Even(n: Int):ArrayList<Int>{
+    fun even(n: Int):ArrayList<Int>{
 
         for (number in 1..n) {
 

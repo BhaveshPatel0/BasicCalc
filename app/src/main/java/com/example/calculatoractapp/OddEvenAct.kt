@@ -44,7 +44,7 @@ class OddEvenAct : AppCompatActivity() {
 
             val number=edtNumber.text.toString().toInt()
 
-            val answer=mEkda.odd(number)
+            val answer=mEkda.even(number)
             tvAnswer.setText("$answer")
 
         }
