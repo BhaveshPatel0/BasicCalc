@@ -12,6 +12,7 @@ class BankAct : AppCompatActivity() {
     lateinit var btnDeposit:Button
     lateinit var btnWithdraw:Button
     lateinit var tvAnswer:TextView
+    lateinit var tvEntry:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,22 +27,26 @@ class BankAct : AppCompatActivity() {
         btnDeposit=findViewById(R.id.btnDeposit)
         btnWithdraw=findViewById(R.id.btnWithdraw)
         tvAnswer=findViewById(R.id.tvAnswer)
+        tvEntry=findViewById(R.id.tvEntry)
     }
     fun bindClick(){
 
         btnDeposit.setOnClickListener {
 
-            val number=edtNumber.text.toString().toInt()
+            val number=edtNumber.text.toString()
 
-            val answer=mBank.dipositList(number)
+            val entry=mBank.listOfEntry(number.plus(" Deposite"))
+            val answer=mBank.dipositList(number.toInt())
 
-            tvAnswer.setText("$answer")
+            tvAnswer.setText("Total Balance $answer")
+            tvEntry.setText("$entry")
         }
         btnWithdraw.setOnClickListener {
-            val number=edtNumber.text.toString().toInt()
-            val answer=mBank.withraw(number)
-            tvAnswer.setText("$answer")
-
+            val number=edtNumber.text.toString()
+            val answer=mBank.withraw(number.toInt())
+            val entry=mBank.listOfEntry(number.plus(" Withdraw"))
+            tvAnswer.setText("Total Balance $answer")
+            tvEntry.setText("$entry ")
 
         }
 
